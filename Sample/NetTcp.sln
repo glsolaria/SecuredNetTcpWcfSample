@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "Contract\Contract.csproj", "{1895E85B-58FF-4006-97F1-8AD4F780E5A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredNetTcpServer50", "SecuredNetTcpServer50\SecuredNetTcpServer50.csproj", "{71234BC1-0EED-4B42-AB9C-E6BA2E01C704}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredNetTcpServer60", "SecuredNetTcpServer60\SecuredNetTcpServer60.csproj", "{71234BC1-0EED-4B42-AB9C-E6BA2E01C704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredNetTcpClient50", "SecuredNetTcpClient50\SecuredNetTcpClient50.csproj", "{165A3E1A-F8A2-4F93-A5B2-F986194427B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredNetTcpClient60", "SecuredNetTcpClient60\SecuredNetTcpClient60.csproj", "{165A3E1A-F8A2-4F93-A5B2-F986194427B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuredNetTcpClient48", "SecuredNetTcpClient48\SecuredNetTcpClient48.csproj", "{C65ACBA7-7372-498C-8B14-E7BB4A9D8A26}"
 EndProject

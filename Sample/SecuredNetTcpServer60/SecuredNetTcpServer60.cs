@@ -51,22 +51,14 @@ namespace SecuredNetTcpServer50
                             new Uri("net.tcp://127.0.0.1:44444/IEchoService"), 
                             EndpointIdentity.CreateX509CertificateIdentity(certs[0])
                             );
-                        
-                        var encoding = new BinaryMessageEncodingBindingElement
-                        {
-                            CompressionFormat = CompressionFormat.None,
-                            ReaderQuotas = XmlDictionaryReaderQuotas.Max,
-                        };
-                        
+
+                        var ssl = new SslStreamSecurityBindingElement();
+                        var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement();
+                        var encoding = new BinaryMessageEncodingBindingElement();
                         var transport = new TcpTransportBindingElement
                         {
                             TransferMode = TransferMode.Streamed,
-                            MaxBufferPoolSize = 524288,
-                            MaxReceivedMessageSize = Convert.ToInt32(Math.Pow(2, 31) - 1),
                         };
-                        
-                        var ssl = new SslStreamSecurityBindingElement();
-                        var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement();
                         
                         Binding binding = new CustomBinding(security, ssl, encoding, transport);
                         

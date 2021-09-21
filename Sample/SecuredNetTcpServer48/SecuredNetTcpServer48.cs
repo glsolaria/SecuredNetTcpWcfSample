@@ -16,22 +16,14 @@ namespace SecuredNetTcpServer48
             string uri = "net.tcp://127.0.0.1:44444/IEchoService";
             
             var host = new ServiceHost(typeof(EchoService));
-            
-            var encoding = new BinaryMessageEncodingBindingElement
-            {
-                CompressionFormat = CompressionFormat.GZip,
-                ReaderQuotas = XmlDictionaryReaderQuotas.Max
-            };
 
+            var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement();
+            var ssl = new SslStreamSecurityBindingElement();
+            var encoding = new BinaryMessageEncodingBindingElement();
             var transport = new TcpTransportBindingElement
             {
                 TransferMode = TransferMode.Streamed,
-                MaxBufferPoolSize = 524288,
-                MaxReceivedMessageSize = Convert.ToInt32(Math.Pow(2, 31) - 1),
             };
-            
-            var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement();
-            var ssl = new SslStreamSecurityBindingElement();
             
             var binding = new CustomBinding(security, ssl, encoding, transport);
 

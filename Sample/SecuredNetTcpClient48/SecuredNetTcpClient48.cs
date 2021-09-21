@@ -21,18 +21,10 @@ namespace SecuredNetTcpClient48
             //security.EnableUnsecuredResponse = true;
             
             var ssl = new SslStreamSecurityBindingElement();
-
-            var encoding = new BinaryMessageEncodingBindingElement
-            {
-                CompressionFormat = CompressionFormat.None,
-                ReaderQuotas = XmlDictionaryReaderQuotas.Max
-            };
-
+            var encoding = new BinaryMessageEncodingBindingElement();
             var transport = new TcpTransportBindingElement
             {
                 TransferMode = TransferMode.Streamed,
-                MaxBufferPoolSize = 524288,
-                MaxReceivedMessageSize = Convert.ToInt32(Math.Pow(2, 31) - 1),
             };
             
             Binding binding = new CustomBinding(security, ssl, encoding, transport);

@@ -13,22 +13,14 @@ namespace SecuredNetTcpClient50
         static void Main()
         {
             Console.WriteLine("Client Starting ...");
-            
-            var encoding = new BinaryMessageEncodingBindingElement
-            {
-                CompressionFormat = CompressionFormat.None,
-                ReaderQuotas = XmlDictionaryReaderQuotas.Max,
-            };
-            
+
+            var ssl = new SslStreamSecurityBindingElement();
+            var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement(); 
+            var encoding = new BinaryMessageEncodingBindingElement();
             var transport = new TcpTransportBindingElement
             {
                 TransferMode = TransferMode.Streamed,
-                MaxBufferPoolSize = 524288,
-                MaxReceivedMessageSize = Convert.ToInt32(Math.Pow(2, 31) - 1),
             };
-            
-            var ssl = new SslStreamSecurityBindingElement();
-            var security = SecurityBindingElement.CreateCertificateOverTransportBindingElement(); 
             
             var binding = new CustomBinding(security, ssl, encoding, transport);
             
