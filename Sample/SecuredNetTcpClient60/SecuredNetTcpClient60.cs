@@ -6,9 +6,9 @@ using System.ServiceModel.Security;
 using System.Xml;
 using Contract;
 
-namespace SecuredNetTcpClient50
+namespace SecuredNetTcpClient60
 {
-    static class SecuredNetTcpClient50
+    static class SecuredNetTcpClient60
     {
         static void Main()
         {

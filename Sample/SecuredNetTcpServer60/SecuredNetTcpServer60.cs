@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Contract;
 
-namespace SecuredNetTcpServer50
+namespace SecuredNetTcpServer60
 {
     class Startup
     {
@@ -84,7 +84,7 @@ namespace SecuredNetTcpServer50
         }
     }
     
-    static class SecuredNetTcpServer50
+    static class SecuredNetTcpServer60
     {
         static void Main()
         {
